@@ -17,6 +17,7 @@ For scraping, the script uses simple gnu utils like sed, awk, paste, cut.
 ## Requirements
 
 * [webtorrent](https://webtorrent.io/) - A tool to stream torrent. `npm install webtorrent-cli -g`
+* [peerflix](https://github.com/mafintosh/peerflix/) - A tool to stream torrent. (webtorrent alternative) `npm install peerflix -g`
 
 ## Installation
 
