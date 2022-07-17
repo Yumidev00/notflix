@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Dependencies - webtorrent, mpv
+# Dependencies - webtorrent/peerflix, mpv
 
 mkdir -p $HOME/.cache/notflix
 
@@ -10,7 +10,7 @@ menu="dmenu -i -l 25"
 # baseurl="https://www.1337x.to"
 # baseurl="https://www.1337xx.to"
 # baseurl="https://www.1337xxx.to"
-baseurl="https://1337xx.to"
+baseurl="https://1337xxx.to"
 
 cachedir="$HOME/.cache/notflix"
 
@@ -74,8 +74,8 @@ fullURL="${baseurl}${url}/"
 curl -s $fullURL > $cachedir/tmp.html
 magnet=$(grep -Po "magnet:\?xt=urn:btih:[a-zA-Z0-9]*" $cachedir/tmp.html | head -n 1) 
 
-webtorrent "$magnet" --mpv
-# peerflix "$magnet" --mpv
+# webtorrent "$magnet" --mpv
+peerflix "$magnet" --mpv
 
 # Simple notification
 notify-send "Enjoy Watching)" -i "NONE"
